@@ -7,11 +7,13 @@
     tools:context="com.king.turman.downloadingbutton.MainActivity">
 
     <com.king.turman.library.DownloadButton
+        android:id="@+id/loading_btn"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:base_arc_color="#77FF0000"
         app:base_arc_width="3dp"
         app:loading_arc_color="#FFFF0000"
-        app:loading_arc_width="8dp" />
+        app:loading_arc_width="8dp"
+        app:center_btn_color="#77FF0000" />
 
 </LinearLayout>

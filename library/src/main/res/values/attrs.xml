@@ -5,5 +5,7 @@
         <attr name="base_arc_width" format="dimension"></attr>
         <attr name="loading_arc_width" format="dimension"></attr>
         <attr name="loading_arc_color" format="color"></attr>
+        <attr name="center_btn_color" format="color"></attr>
+        <attr name="center_btn_width" format="dimension"></attr>
     </declare-styleable>
 </resources>
