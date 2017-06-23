@@ -2,18 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context="com.king.turman.downloadingbutton.MainActivity">
 
-    <com.king.turman.library.DownloadButton
-        android:id="@+id/loading_btn"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:base_arc_color="#77FF0000"
-        app:base_arc_width="3dp"
-        app:loading_arc_color="#FFFF0000"
-        app:loading_arc_width="8dp"
-        app:center_btn_color="#77FF0000" />
+    <!--<com.king.turman.library.DownloadButton-->
+        <!--android:id="@+id/loading_btn"-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--app:base_arc_color="#77FF0000"-->
+        <!--app:base_arc_width="3dp"-->
+        <!--app:loading_arc_color="#FFFF0000"-->
+        <!--app:loading_arc_width="8dp"-->
+        <!--app:center_btn_color="#77FF0000" />-->
+
+    <!--<com.king.turman.library.WaveView-->
+        <!--android:id="@+id/wave_view_1"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp" />-->
+
+    <!--<com.king.turman.library.WaveView-->
+        <!--android:id="@+id/wave_view"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Hello"-->
+        <!--android:background="@android:color/holo_blue_dark"-->
+        <!--/>-->
+
 
 </LinearLayout>
