@@ -4,11 +4,17 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
+import android.os.RemoteException;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -280,7 +286,54 @@ public class MainActivity extends AppCompatActivity {
             rootLayout.addView(linearLayout);
         }
 
+//        getPackageManager().resolveActivity(new Intent(),PackageManager.MATCH_DEFAULT_ONLY);
+//        getPackageManager().queryIntentActivities(new Intent(),PackageManager.MATCH_DEFAULT_ONLY);
+//        getPackageManager().resolveService(new Intent(), PackageManager.MATCH_DEFAULT_ONLY);
+
+
+        findViewById(R.id.tv).setOnClickListener(v->{
+            TestClass.name = "Tom";
+            Toast.makeText(this, TestClass.name, Toast.LENGTH_SHORT).show();
+            ((BaseApplication)getApplication()).setCurrent_process(100);
+            Intent intent = new Intent(this, SecondActivity.class);
+            startActivity(intent);
+        });
+
+
+        //绑定服务
+        Intent intentService = new Intent("com.king.turman.downloadingbutton.WorkingService");
+        intentService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        MainActivity.this.bindService(intentService, serviceConnection, BIND_AUTO_CREATE);
+
     }
+
+    @Override
+    protected void onDestroy() {
+        if (mIMyService != null) {
+            unbindService(serviceConnection);
+        }
+        super.onDestroy();
+    }
+
+    private IMyService mIMyService;
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mIMyService = IMyService.Stub.asInterface(service);
+            try {
+                Book book = mIMyService.getBook().get(0);
+                Toast.makeText(MainActivity.this,book.getName(),Toast.LENGTH_SHORT).show();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mIMyService = null;
+        }
+    };
+
 }
 
 

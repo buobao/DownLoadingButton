@@ -9,6 +9,12 @@
     android:gravity="center"
     tools:context="com.king.turman.downloadingbutton.MainActivity">
 
+    <TextView
+        android:id="@+id/tv"
+        android:text="process"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <!--<com.king.turman.library.DownloadButton-->
         <!--android:id="@+id/loading_btn"-->
         <!--android:layout_width="80dp"-->
