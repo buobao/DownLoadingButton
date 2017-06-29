@@ -19,7 +19,11 @@ import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
@@ -31,6 +35,7 @@ import android.widget.Toast;
 import com.king.turman.downloadingbutton.proxy.Operate;
 import com.king.turman.downloadingbutton.proxy.OperateImpl;
 import com.king.turman.downloadingbutton.proxy.TimingInvocationHandler;
+import com.king.turman.library.CoreView;
 import com.king.turman.library.DownloadButton;
 import com.king.turman.library.WaveView;
 import com.king.turman.library.block.BlockView;
@@ -272,6 +277,11 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println();
 //        operate.operateMethod3();
 
+        ViewConfiguration.get(getApplication()).getScaledTouchSlop();
+
+
+        CoreView coreView = (CoreView) findViewById(R.id.coreview);
+
 
         LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout);
         for (int i=0;i<10;i++) {
@@ -333,7 +343,6 @@ public class MainActivity extends AppCompatActivity {
             mIMyService = null;
         }
     };
-
 }
 
 

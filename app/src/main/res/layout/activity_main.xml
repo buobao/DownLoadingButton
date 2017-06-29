@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context="com.king.turman.downloadingbutton.MainActivity">
 
     <TextView
@@ -14,6 +13,12 @@
         android:text="process"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.king.turman.library.CoreView
+        android:id="@+id/coreview"
+        android:layout_width="200dp"
+        android:background="@color/darkolivegreen"
+        android:layout_height="200dp" />
 
     <!--<com.king.turman.library.DownloadButton-->
         <!--android:id="@+id/loading_btn"-->
