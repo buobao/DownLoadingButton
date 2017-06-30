@@ -10,11 +10,13 @@
 
     <TextView
         android:id="@+id/tv"
+        android:visibility="gone"
         android:text="process"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <com.king.turman.library.CoreView
+        android:visibility="gone"
         android:id="@+id/coreview"
         android:layout_width="200dp"
         android:background="@color/darkolivegreen"
@@ -48,5 +50,10 @@
         <!--android:background="@android:color/holo_blue_dark"-->
         <!--/>-->
 
+
+    <com.king.turman.library.MovableView
+        android:background="@color/greenyellow"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
 
 </LinearLayout>

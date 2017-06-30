@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
 //        set2.setInterpolator(new AccelerateDecelerateInterpolator());
 //        set2.start();
 
-
+        
 
 //        TimingInvocationHandler timingInvocationHandler = new TimingInvocationHandler(new OperateImpl());
 //
